@@ -35,4 +35,6 @@ public class ProductsByStore {
   @JoinColumn(name = "store_id")
   @JsonIgnore
   private Store store;
+
+  private Long Stock;
 }
