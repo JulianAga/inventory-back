@@ -9,9 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException.BadRequest;
 import org.springframework.web.server.ResponseStatusException;
-import sun.misc.Request;
 
 @Service
 public class StoreService {
@@ -57,8 +55,8 @@ public class StoreService {
       result = false;
     }
 
-    if(isStoreByName(store.getName())){
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"The name already exist");
+    if (isStoreByName(store.getName())) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name already exist");
     }
 
     return result;
@@ -70,9 +68,10 @@ public class StoreService {
         .map(store -> Boolean.TRUE).findAny().orElse(Boolean.FALSE);
   }
 
-  public Store findStoreByName(RequestStore requestStore){
+  public Store findStoreByName(RequestStore requestStore) {
     return this.storeRepository.findAll()
-        .stream().filter(store -> store.getName().equals(requestStore.getName())).findAny().orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
+        .stream().filter(store -> store.getName().equals(requestStore.getName())).findAny()
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
             "The store does not exist"));
   }
 
@@ -101,7 +100,7 @@ public class StoreService {
         ).collect(Collectors.toList());
   }
 
-  public void deleteById(Long id) {
+  public void delete(Long id) {
     this.storeRepository.deleteById(id);
   }
 }

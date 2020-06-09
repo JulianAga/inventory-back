@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8527048-73db-4b33-b990-b3f0357541e9" name="Default Changelist" comment="" />
+    <list default="true" id="d8527048-73db-4b33-b990-b3f0357541e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-back.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/inventory-back.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/StoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/services/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/services/StoreService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,11 +53,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.inventoryback.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\inventory-back\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -87,22 +104,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="388" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584981155081" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1584983893193">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1591665183305">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584983893193" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1584983893193">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591665183305" />
+    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1591665183289">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584983893193" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1584983893192">
+    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591665183289" />
+    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1591665183289">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584983893192" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1584983893193">
+    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591665183289" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1591665183289">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584983893193" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591665183289" />
     <state x="496" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1585083929788">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
