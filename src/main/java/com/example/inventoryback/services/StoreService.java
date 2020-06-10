@@ -55,10 +55,6 @@ public class StoreService {
       result = false;
     }
 
-    if (isStoreByName(store.getName())) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name already exist");
-    }
-
     return result;
   }
 

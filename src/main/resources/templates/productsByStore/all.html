@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+<div class="container">
+  <br>
+  <form th:action="@{/productByStore/} + ${id}" th:object="${product}" method="post">
+
+
+    <div class="form-group row">
+
+      <label class="col-sm-2 col-form-label">Nombre del producto</label>
+      <div class=col-sm-6>
+        <select id="id" name="id" class="form-control" >
+          <option th:each="product:${products}" th:value="${product.id}" th:text="${product.name}" th:selected="false" ></option>
+        </select>
+      </div>
+    </div>
+
+    <input type="submit" value="Añadir al local" class="btn btn-success"/>
+
+  </form>
+  <br>
+  <h1 class="text-secondary border border success border-top-0 border-left-0 border-right-0"
+      th:text="${title}"></h1>
+  <table class="table table-striped">
+    <thead>
+    <th>Nombre del producto</th>
+    </thead>
+    <tbody>
+    <tr th:each="prod:${productsByStore}">
+
+      <td th:text="${prod.product.name}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+</div>
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

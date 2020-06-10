@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+
+<div class="container">
+
+  <br>
+
+  <h1 th:text="${title}"
+      class="text-secondary border border success border-top-0 border-left-0 border-right-0"></h1>
+
+  <form th:action="@{/product/form}" th:object="${product}" method="post">
+
+
+
+    <div class="form-group row">
+
+      <label class="col-sm-2 col-form-label">Nombre del producto</label>
+      <div class=col-sm-6>
+        <input type="text" th:field="*{name}" class="form-control"
+               th:errorclass="'form-control alert-danger'"/>
+      </div>
+    </div>
+
+    <input type="submit" value="Añadir al local" class="btn btn-success"/>
+
+</form>
+</div>
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

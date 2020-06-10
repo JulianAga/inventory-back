@@ -9,7 +9,6 @@
   <br>
   <h1 class="text-secondary border border success border-top-0 border-left-0 border-right-0"
       th:text="${title}"></h1>
-  <a class="btn btn-primary" th:href="@{/store/form}">Crear local</a>
   <table class="table table-striped">
     <thead>
     <th>Nombre del local</th>
@@ -17,6 +16,7 @@
     <th>Ciudad</th>
     <th>Editar</th>
     <th>Eliminar</th>
+    <th>Ver productos</th>
     </thead>
     <tbody>
     <tr th:each="store:${stores}">
@@ -27,13 +27,22 @@
       <td><a class="btn btn-primary btn-xs" th:href="@{/store/form/} + ${store.id}"
              th:text="'Editar'"></a></td>
       <td><a class="btn btn-danger btn-xs" th:href="@{/store/eliminar/} + ${store.id}"
-             th:text="'Eliminar'" onclick="return confirm('Est�s seguro que deseas eliminar?')"></a>
+             th:text="'Eliminar'" onclick="return confirm('Estás seguro que deseas eliminar?')"></a>
+      </td>
+      <td><a class="btn btn-secondary btn-xs" th:href="@{/productByStore/} + ${store.id}" th:text="'Productos'"></a>
       </td>
 
     </tr>
     </tbody>
   </table>
+
+  <div class="container">
+    <a class="btn btn-primary" th:href="@{/store/form}">Agregar local</a>
+
+    <a class="btn btn-primary " th:href="@{/product/form}">Agregar productos</a>
+  </div>
 </div>
+
 
 <footer th:replace="layout/layout :: footer"></footer>
 

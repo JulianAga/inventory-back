@@ -52,7 +52,7 @@ public class Product {
   @JsonProperty(value = "selling_price")
   private Float sellingPrice;
 
-  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "product")
+  @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "product")
   @ToString.Exclude
   private List<ProductsByStore> productsByStores;
 
