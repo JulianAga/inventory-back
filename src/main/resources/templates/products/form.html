@@ -26,7 +26,26 @@
       </div>
     </div>
 
-    <input type="submit" value="Añadir al local" class="btn btn-success"/>
+      <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Codigo</label>
+      <div class=col-sm-6>
+        <input type="number" th:field="*{code}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Precio de compra</label>
+      <div class=col-sm-6>
+        <input type="number" step="0.01" th:field="*{initialPrice}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Precio de venta</label>
+      <div class=col-sm-6>
+        <input type="number" step="0.01" th:field="*{sellingPrice}" class="form-control"/>
+      </div>
+    </div>
+
+    <input type="submit" value="Añadir producto" class="btn btn-success"/>
 
 </form>
 </div>

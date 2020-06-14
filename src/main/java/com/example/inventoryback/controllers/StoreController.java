@@ -1,6 +1,7 @@
 package com.example.inventoryback.controllers;
 
 import com.example.inventoryback.models.Store;
+import com.example.inventoryback.services.ProductByStoreService;
 import com.example.inventoryback.services.StoreService;
 import java.util.Map;
 import javax.validation.Valid;
@@ -19,6 +20,9 @@ public class StoreController {
 
   @Autowired
   public StoreService storeService;
+
+  @Autowired
+  private ProductByStoreService productByStoreService;
 
   @RequestMapping(value = "/all", method = RequestMethod.GET)
   public String listar(Model model) {

@@ -2,6 +2,7 @@ package com.example.inventoryback.services;
 
 import com.example.inventoryback.models.Product;
 import com.example.inventoryback.models.ProductsByStore;
+import com.example.inventoryback.models.Store;
 import com.example.inventoryback.repositories.ProductRepository;
 import com.example.inventoryback.repositories.ProductsByStoreRepository;
 import com.example.inventoryback.repositories.StoreRepository;
@@ -39,6 +40,10 @@ public class ProductByStoreService {
         .Stock(0L)
         .build();
     this.productsByStoreRepository.save(productsByStore);
+  }
+
+  public void removeByStoreId(Long id){
+    this.productsByStoreRepository.deleteByStore(id);
   }
 
 }

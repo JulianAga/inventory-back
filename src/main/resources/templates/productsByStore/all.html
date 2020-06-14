@@ -29,11 +29,17 @@
   <table class="table table-striped">
     <thead>
     <th>Nombre del producto</th>
+    <th>Precio de compra</th>
+    <th>Precio de venta</th>
+    <th>Stock</th>
     </thead>
     <tbody>
     <tr th:each="prod:${productsByStore}">
 
       <td th:text="${prod.product.name}"></td>
+      <td th:text="${prod.product.initialPrice}"></td>
+      <td th:text="${prod.product.sellingPrice}"></td>
+      <td th:text="${prod.stock}"></td>
     </tr>
     </tbody>
   </table>

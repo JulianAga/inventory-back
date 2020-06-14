@@ -3,6 +3,7 @@ package com.example.inventoryback.services;
 import com.example.inventoryback.entities.requests.RequestStore;
 import com.example.inventoryback.entities.responses.ResponseStore;
 import com.example.inventoryback.models.Store;
+import com.example.inventoryback.repositories.ProductsByStoreRepository;
 import com.example.inventoryback.repositories.StoreRepository;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +17,12 @@ public class StoreService {
 
   @Autowired
   private StoreRepository storeRepository;
+
+  @Autowired
+  private ProductByStoreService productByStoreService;
+
+  @Autowired
+  private ProductsByStoreRepository productsByStoreRepository;
 
   public void save(Store store) {
     if (!storeIsValid(store)) {
@@ -97,6 +104,9 @@ public class StoreService {
   }
 
   public void delete(Long id) {
+
+    this.productsByStoreRepository.deleteByStore(id);
+
     this.storeRepository.deleteById(id);
   }
 }

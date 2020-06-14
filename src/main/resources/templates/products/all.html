@@ -12,11 +12,24 @@
   <table class="table table-striped">
     <thead>
     <th>Nombre del producto</th>
+    <th>Codigo </th>
+    <th>Precio de compra</th>
+    <th>Precio de venta</th>
     </thead>
     <tbody>
     <tr th:each="product:${products}">
 
       <td th:text="${product.name}"></td>
+
+      <td th:text="${product.code}"></td>
+
+      <td th:text="${product.initialPrice}"></td>
+
+      <td th:text="${product.sellingPrice}"></td>
+
+      <td><a class="btn btn-danger btn-xs" th:href="@{/product/eliminar/} + ${product.id}"
+             th:text="'Eliminar'" onclick="return confirm('Estás seguro que deseas eliminar?')"></a>
+      </td>
     </tr>
     </tbody>
   </table>

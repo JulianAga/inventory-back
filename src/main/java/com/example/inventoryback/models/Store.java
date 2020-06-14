@@ -19,6 +19,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Table(name = "stores")
 @NoArgsConstructor
@@ -51,7 +53,7 @@ public class Store implements Serializable {
   @Column(name = "city")
   private String city;
 
-  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "store")
+  @OneToMany(mappedBy = "store", fetch = FetchType.EAGER)
   @ToString.Exclude
   private List<ProductsByStore> productsByStores;
 }

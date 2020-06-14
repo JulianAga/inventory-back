@@ -57,4 +57,13 @@ public class ProductsController {
     productService.save(product);
     return "redirect:all";
   }
+
+  @RequestMapping(value = "/eliminar/{id}")
+  public String eliminar(@PathVariable(value = "id") Long id) {
+
+    if (id > 0) {
+      productService.deleteById(id);
+    }
+    return "redirect:/product/all";
+  }
 }
