@@ -20,7 +20,7 @@ public class ProductByStoreService {
   private StoreRepository storeRepository;
 
   @Autowired
-  private ProductRepository productRepository;
+  private ProductService productService;
 
   @Autowired
   public ProductByStoreService(
@@ -36,13 +36,13 @@ public class ProductByStoreService {
 
     ProductsByStore productsByStore = ProductsByStore.builder()
         .store(storeRepository.getOne(idStore))
-        .product(productRepository.getOne(idProduct.getId()))
+        .product(productService.findById(idProduct.getId()))
         .Stock(0L)
         .build();
     this.productsByStoreRepository.save(productsByStore);
   }
 
-  public void removeByStoreId(Long id){
+  public void removeByStoreId(Long id) {
     this.productsByStoreRepository.deleteByStore(id);
   }
 

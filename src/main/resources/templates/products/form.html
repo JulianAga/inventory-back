@@ -23,13 +23,17 @@
       <div class=col-sm-6>
         <input type="text" th:field="*{name}" class="form-control"
                th:errorclass="'form-control alert-danger'"/>
+        <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}"
+               th:errors="*{name}"></small>
       </div>
     </div>
 
-      <div class="form-group row">
+    <div class="form-group row">
       <label class="col-sm-2 col-form-label">Codigo</label>
       <div class=col-sm-6>
         <input type="number" th:field="*{code}" class="form-control"/>
+        <small class="form-text text-danger" th:if="${#fields.hasErrors('code')}"
+               th:errors="*{code}"></small>
       </div>
     </div>
     <div class="form-group row">
@@ -41,13 +45,15 @@
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Precio de venta</label>
       <div class=col-sm-6>
-        <input type="number" step="0.01 th:field="*{sellingPrice}" class="form-control"/>
+        <input type="number" step="0.01" th:field="*{sellingPrice}" class="form-control"/>
       </div>
     </div>
 
+    <input type="hidden" th:field="*{id}"/>
+
     <input type="submit" value="Añadir producto" class="btn btn-success"/>
 
-</form>
+  </form>
 </div>
 <footer th:replace="layout/layout :: footer"></footer>
 </body>

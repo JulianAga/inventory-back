@@ -30,6 +30,8 @@
       <td><a class="btn btn-danger btn-xs" th:href="@{/product/eliminar/} + ${product.id}"
              th:text="'Eliminar'" onclick="return confirm('Estás seguro que deseas eliminar?')"></a>
       </td>
+      <td><a class="btn btn-primary btn-xs" th:href="@{/product/form/} + ${product.id}"
+             th:text="'Editar'"></a></td>
     </tr>
     </tbody>
   </table>
