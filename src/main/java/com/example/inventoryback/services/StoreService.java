@@ -3,21 +3,26 @@ package com.example.inventoryback.services;
 import com.example.inventoryback.entities.requests.RequestStore;
 import com.example.inventoryback.entities.responses.ResponseStore;
 import com.example.inventoryback.models.Store;
+import com.example.inventoryback.repositories.ProductsByStoreRepository;
 import com.example.inventoryback.repositories.StoreRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException.BadRequest;
 import org.springframework.web.server.ResponseStatusException;
-import sun.misc.Request;
 
 @Service
 public class StoreService {
 
   @Autowired
   private StoreRepository storeRepository;
+
+  @Autowired
+  private ProductByStoreService productByStoreService;
+
+  @Autowired
+  private ProductsByStoreRepository productsByStoreRepository;
 
   public void save(Store store) {
     if (!storeIsValid(store)) {
@@ -57,10 +62,6 @@ public class StoreService {
       result = false;
     }
 
-    if(isStoreByName(store.getName())){
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"The name already exist");
-    }
-
     return result;
   }
 
@@ -70,9 +71,10 @@ public class StoreService {
         .map(store -> Boolean.TRUE).findAny().orElse(Boolean.FALSE);
   }
 
-  public Store findStoreByName(RequestStore requestStore){
+  public Store findStoreByName(RequestStore requestStore) {
     return this.storeRepository.findAll()
-        .stream().filter(store -> store.getName().equals(requestStore.getName())).findAny().orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
+        .stream().filter(store -> store.getName().equals(requestStore.getName())).findAny()
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
             "The store does not exist"));
   }
 
@@ -101,7 +103,10 @@ public class StoreService {
         ).collect(Collectors.toList());
   }
 
-  public void deleteById(Long id) {
+  public void delete(Long id) {
+
+    this.productsByStoreRepository.deleteByStore(id);
+
     this.storeRepository.deleteById(id);
   }
 }

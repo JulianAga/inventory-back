@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+<div class="container">
+  <br>
+  <h1 class="text-secondary border border success border-top-0 border-left-0 border-right-0"
+      th:text="${title}"></h1>
+  <table class="table table-striped">
+    <thead>
+    <th>Nombre del producto</th>
+    <th>Codigo </th>
+    <th>Precio de compra</th>
+    <th>Precio de venta</th>
+    </thead>
+    <tbody>
+    <tr th:each="product:${products}">
+
+      <td th:text="${product.name}"></td>
+
+      <td th:text="${product.code}"></td>
+
+      <td th:text="${product.initialPrice}"></td>
+
+      <td th:text="${product.sellingPrice}"></td>
+
+      <td><a class="btn btn-danger btn-xs" th:href="@{/product/eliminar/} + ${product.id}"
+             th:text="'Eliminar'" onclick="return confirm('Estás seguro que deseas eliminar?')"></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <a class="btn btn-primary" th:href="@{/product/form/}">Agregar Producto</a>
+  </div>
+</div>
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>
