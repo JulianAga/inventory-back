@@ -3,23 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8527048-73db-4b33-b990-b3f0357541e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/StoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/models/CategoriesByProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/models/CategoriesByProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/models/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/models/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/repositories/ProductsByStoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/repositories/ProductsByStoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/ProductByStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/ProductByStoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/services/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/products/all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/products/all.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/products/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/products/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/ProductsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/controllers/StoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/CategoriesByProducts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/CategoriesByProducts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/Store$StoreBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/Store$StoreBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/models/Store.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/inventoryback/services/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/inventoryback/services/StoreService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,19 +45,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/products" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\inventory-back\src\main\resources\templates\products" />
-      <recent name="C:\inventory-back\src\main\resources\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.inventoryback.entities" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\inventory-back\src\main\resources\static\bootstrap" />
       <recent name="C:\inventory-back\src\main\resources\static" />
       <recent name="C:\inventory-back\src\main\resources\static\images" />
       <recent name="C:\inventory-back\src\main\resources\images" />
       <recent name="C:\inventory-back\src\main\resources\templates\layout" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.inventoryback.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\inventory-back\src\main\resources\templates\products" />
+      <recent name="C:\inventory-back\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,22 +105,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="388" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584981155081" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1592163020695">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1592163558083">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592163020695" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1592163020694">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
+    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1592163558083">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592163020694" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1592163020693">
+    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
+    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1592163558083">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592163020693" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1592163020694">
+    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1592163558083">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592163020694" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1591763667913">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -157,9 +141,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="496" y="255" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1591904840429" />
-    <state x="609" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591757005990">
+    <state x="609" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592424653683">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="609" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1591757005990" />
+    <state x="609" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1592424653683" />
+    <state x="581" y="144" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592424641579">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="581" y="144" key="git4idea.branch.GitSmartOperationDialog/0.0.1600.860@0.0.1600.860" timestamp="1592424641579" />
   </component>
 </project>
