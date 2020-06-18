@@ -1,5 +1,6 @@
 package com.example.inventoryback.repositories;
 
+import com.example.inventoryback.models.Product;
 import com.example.inventoryback.models.ProductsByStore;
 import java.util.List;
 import javax.transaction.Transactional;
@@ -19,4 +20,16 @@ public interface ProductsByStoreRepository extends JpaRepository<ProductsByStore
   public void deleteByStore(Long id);
 
   public void deleteByStoreId(Long id);
+
+  @Transactional
+  @Modifying
+  @Query(value= "UPDATE products_by_store SET stock = stock + ?3 WHERE store_id= ?1 AND product_id= ?2", nativeQuery = true)
+  public void addStock(Long store_id, Long product_id, Long stockAdded);
+
+  @Transactional
+  @Modifying
+  @Query(value= "UPDATE products_by_store SET stock = stock - ?3 WHERE store_id= ?1 AND product_id= ?2", nativeQuery = true)
+  public void removeStock(Long store_id, Long product_id, Long stockRemoved);
+
+  public ProductsByStore getByProductIdAndStoreId( Long productId, Long storeId);
 }
