@@ -41,6 +41,9 @@ public class ProductsByStoreController {
 
   @RequestMapping(value = "/{id}", method = RequestMethod.POST)
   public String save(Product product, @PathVariable Long id) {
+    if (id == 0L){
+      return "redirect:productsByStore/all";
+    }
     this.productByStoreService.saveProduct(product, id);
     return "redirect:/productByStore/{id}";
   }

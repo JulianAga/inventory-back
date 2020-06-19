@@ -47,7 +47,6 @@ public class StoreController {
     } else {
       return "redirect:/store/all";
     }
-
     model.put("store", store);
     model.put("title", "Editar local");
 
