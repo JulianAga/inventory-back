@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head th:replace="layout/layout :: head"></head>
 <body>
 
@@ -11,6 +11,7 @@
 
 
     <div class="form-group row">
+
 
       <label class="col-sm-2 col-form-label">Nombre del producto</label>
       <div class=col-sm-6>
@@ -48,10 +49,10 @@
     </tbody>
   </table>
 
-
-
 </div>
 
+<div class="alert alert-danger" role="alert" th:if="${error}" th:text="${error}">
+</div>
 
 <footer th:replace="layout/layout :: footer"></footer>
 

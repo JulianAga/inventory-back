@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import sun.misc.Request;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 @Controller
 
 @Repository
@@ -112,13 +114,20 @@ public class ProductsByStoreController {
 
     @RequestMapping(value = "remove/{idStore}/{id}", method = RequestMethod.POST)
     public String removeStock(RequestModifyStock requestModifyStock, @PathVariable Long id, @PathVariable Long idStore, BindingResult result, Model model) throws Exception {
-        if (result.hasErrors()) {
-            model.addAttribute("titulo", "Editar stock");
+        try {
+            if (result.hasErrors()) {
+                model.addAttribute("titulo", "Editar stock");
 
-            return "productsByStore/stock_form_remove";
+                return "productsByStore/stock_form_remove";
+            }
+            this.productByStoreService.removeStock(idStore, id, requestModifyStock.getStockModified());
+            return "redirect:/productByStore/{idStore}";
         }
-        this.productByStoreService.removeStock(idStore, id, requestModifyStock.getStockModified());
-        return "redirect:/productByStore/{idStore}";
+        catch(Exception e){
+            model.addAttribute("error", "No se puede sacar esa cantidad de existencias, el stock sería negativo.");
+            return getStoreProducts(idStore, model);
+        }
+
     }
 
 }
