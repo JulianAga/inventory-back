@@ -18,7 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import sun.misc.Request;
+
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -46,12 +46,6 @@ public class ProductsByStoreController {
         model.addAttribute("id", idStore);
 
         return "productsByStore/all";
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String save(Product product, @PathVariable Long id) {
-        this.productByStoreService.saveProduct(product, id);
-        return "redirect:/productByStore/{id}";
     }
 
 
@@ -110,6 +104,16 @@ public class ProductsByStoreController {
         }
         this.productByStoreService.addStock(idStore, id, requestModifyStock.getStockModified());
         return "redirect:/productByStore/{idStore}";
+    }
+
+    
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    public String save(Product product, @PathVariable Long id) {
+        if (id == 0L){
+        return "redirect:productsByStore/all";  
+        }
+        this.productByStoreService.saveProduct(product, id);
+        return "redirect:/productByStore/{id}";
     }
 
     @RequestMapping(value = "remove/{idStore}/{id}", method = RequestMethod.POST)

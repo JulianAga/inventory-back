@@ -28,6 +28,9 @@ public class ProductByStoreService {
     private ProductRepository productRepository;
 
     @Autowired
+    private ProductService productService;
+
+    @Autowired
     public ProductByStoreService(
             ProductsByStoreRepository productsByStoreRepository) {
         this.productsByStoreRepository = productsByStoreRepository;
@@ -39,12 +42,13 @@ public class ProductByStoreService {
 
     public void saveProduct(Product idProduct, Long idStore) {
         ProductsByStore productsByStore = ProductsByStore.builder()
-                .store(storeRepository.getOne(idStore))
-                .product(productRepository.getOne(idProduct.getId()))
-                .Stock(0L)
-                .build();
-        this.productsByStoreRepository.save(productsByStore);
-    }
+        .store(storeRepository.getOne(idStore))
+        .product(productService.findById(idProduct.getId()))
+        .Stock(0L)
+        .build();
+    this.productsByStoreRepository.save(productsByStore);
+  }
+    
 
    /* public void updateProduct(ProductsByStore product, Long id) throws Exception {
         ProductsByStore productsByStore = productsByStoreRepository.findById(id).orElseThrow(Exception::new);
