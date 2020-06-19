@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head th:replace="layout/layout :: head"></head>
 <body>
 
@@ -11,6 +11,7 @@
 
 
     <div class="form-group row">
+
 
       <label class="col-sm-2 col-form-label">Nombre del producto</label>
       <div class=col-sm-6>
@@ -40,14 +41,18 @@
       <td th:text="${prod.product.initialPrice}"></td>
       <td th:text="${prod.product.sellingPrice}"></td>
       <td th:text="${prod.stock}"></td>
+      <td><a class="btn btn-success btn-xs" th:href="@{/productByStore/modifyAddStock/} + ${prod.id}"
+             th:text="'Agregar stock'"></a></td>
+      <td><a class="btn btn-danger btn-xs" th:href="@{/productByStore/modifyRemoveStock/} + ${prod.id}"
+             th:text="'Eliminar stock'"></a></td>
     </tr>
     </tbody>
   </table>
 
-
-
 </div>
 
+<div class="alert alert-danger" role="alert" th:if="${error}" th:text="${error}">
+</div>
 
 <footer th:replace="layout/layout :: footer"></footer>
 
