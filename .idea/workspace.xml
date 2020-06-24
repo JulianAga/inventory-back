@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d8527048-73db-4b33-b990-b3f0357541e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/products/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/products/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsByStoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/inventoryback/controllers/ProductsByStoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/stock_form_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/stock_form_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/stock_form_remove.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/productsByStore/stock_form_remove.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/products" />
   </component>
@@ -105,21 +110,25 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="388" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584981155081" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1592163558083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="93" key="GridCell.Tab.0.bottom" timestamp="1592598876289">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="93" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592598876289" />
     <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1592163558083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="93" key="GridCell.Tab.0.center" timestamp="1592598876289">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="93" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592598876289" />
     <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1592163558083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="93" key="GridCell.Tab.0.left" timestamp="1592598876289">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="93" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592598876289" />
     <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1592163558083">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="93" key="GridCell.Tab.0.right" timestamp="1592598876289">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="93" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592598876289" />
     <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592163558083" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1591763667913">
       <screen x="0" y="0" width="1600" height="860" />
@@ -149,5 +158,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="581" y="144" key="git4idea.branch.GitSmartOperationDialog/0.0.1600.860@0.0.1600.860" timestamp="1592424641579" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1592598749718">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1592598749718" />
   </component>
 </project>
