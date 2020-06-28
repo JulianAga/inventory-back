@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,6 +35,7 @@ public class Auditory {
 
     private Long stockModified;
 
+    @NotNull
     private String reason;
 
 }

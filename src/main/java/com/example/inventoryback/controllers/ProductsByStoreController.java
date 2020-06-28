@@ -1,10 +1,10 @@
 package com.example.inventoryback.controllers;
 
 import com.example.inventoryback.entities.requests.RequestModifyStock;
-import com.example.inventoryback.models.Auditory;
+import com.example.inventoryback.exceptions.ReasonCannotBeNullException;
+import com.example.inventoryback.exceptions.StockIsNegativeException;
 import com.example.inventoryback.models.Product;
 import com.example.inventoryback.models.ProductsByStore;
-import com.example.inventoryback.models.Store;
 import com.example.inventoryback.services.AuditoryService;
 import com.example.inventoryback.services.ProductByStoreService;
 import com.example.inventoryback.services.ProductService;
@@ -101,15 +101,21 @@ public class ProductsByStoreController {
 
 
     @RequestMapping(value = "add/{idStore}/{id}", method = RequestMethod.POST)
-    public String addStock(RequestModifyStock requestModifyStock, @PathVariable Long id, @PathVariable Long idStore, BindingResult result, Model model) throws Exception {
-        if (result.hasErrors()) {
-            model.addAttribute("titulo", "Editar stock");
+    public String addStock(RequestModifyStock requestModifyStock, @PathVariable Long id, @PathVariable Long idStore, BindingResult result, Model model) throws ReasonCannotBeNullException {
+        try {
+            if (result.hasErrors()) {
+                model.addAttribute("titulo", "Editar stock");
 
-            return "productsByStore/stock_form_add";
+                return "productsByStore/stock_form_add";
+            }
+            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "added");
+            this.productByStoreService.addStock(idStore, id, requestModifyStock.getStockModified());
+            return "redirect:/productByStore/{idStore}";
         }
-        this.productByStoreService.addStock(idStore, id, requestModifyStock.getStockModified());
-        this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "added");
-        return "redirect:/productByStore/{idStore}";
+        catch(ReasonCannotBeNullException e){
+            model.addAttribute("error", "La razón no puede estar en blanco");
+            return getStoreProducts(idStore, model);
+        }
     }
 
     
@@ -123,7 +129,7 @@ public class ProductsByStoreController {
     }
 
     @RequestMapping(value = "remove/{idStore}/{id}", method = RequestMethod.POST)
-    public String removeStock(RequestModifyStock requestModifyStock, @PathVariable Long id, @PathVariable Long idStore, BindingResult result, Model model) throws Exception {
+    public String removeStock(RequestModifyStock requestModifyStock, @PathVariable Long id, @PathVariable Long idStore, BindingResult result, Model model) throws StockIsNegativeException, ReasonCannotBeNullException {
         try {
             if (result.hasErrors()) {
                 model.addAttribute("titulo", "Editar stock");
@@ -134,8 +140,12 @@ public class ProductsByStoreController {
             this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "eliminated");
             return "redirect:/productByStore/{idStore}";
         }
-        catch(Exception e){
+        catch(StockIsNegativeException e){
             model.addAttribute("error", "No se puede sacar esa cantidad de existencias, el stock sería negativo.");
+            return getStoreProducts(idStore, model);
+        }
+        catch(ReasonCannotBeNullException e){
+            model.addAttribute("error", "La razón no puede estar en blanco");
             return getStoreProducts(idStore, model);
         }
 

@@ -1,5 +1,6 @@
 package com.example.inventoryback.services;
 
+import com.example.inventoryback.exceptions.ReasonCannotBeNullException;
 import com.example.inventoryback.models.Auditory;
 import com.example.inventoryback.repositories.AuditoryRepository;
 import com.example.inventoryback.repositories.StoreRepository;
@@ -18,8 +19,11 @@ public class AuditoryService {
     @Autowired
     private StoreRepository storeRepository;
 
-    public void save(Long idProduct, Long idStore, Long stockModified, String reason, String addedOrEliminated) {
+    public void save(Long idProduct, Long idStore, Long stockModified, String reason, String addedOrEliminated) throws ReasonCannotBeNullException {
         {
+            if(reason.isEmpty()){
+                throw new ReasonCannotBeNullException();
+            }
             Auditory auditory = Auditory.builder()
                     .store(storeRepository.getOne(idStore))
                     .product(productService.findById(idProduct))
