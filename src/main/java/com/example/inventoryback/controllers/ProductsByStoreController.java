@@ -1,9 +1,11 @@
 package com.example.inventoryback.controllers;
 
 import com.example.inventoryback.entities.requests.RequestModifyStock;
+import com.example.inventoryback.models.Auditory;
 import com.example.inventoryback.models.Product;
 import com.example.inventoryback.models.ProductsByStore;
 import com.example.inventoryback.models.Store;
+import com.example.inventoryback.services.AuditoryService;
 import com.example.inventoryback.services.ProductByStoreService;
 import com.example.inventoryback.services.ProductService;
 import com.example.inventoryback.services.StoreService;
@@ -33,6 +35,9 @@ public class ProductsByStoreController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private AuditoryService auditoryService;
 
     @Autowired
     private StoreService storeService;
@@ -103,6 +108,7 @@ public class ProductsByStoreController {
             return "productsByStore/stock_form_add";
         }
         this.productByStoreService.addStock(idStore, id, requestModifyStock.getStockModified());
+        this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "added");
         return "redirect:/productByStore/{idStore}";
     }
 
@@ -125,6 +131,7 @@ public class ProductsByStoreController {
                 return "productsByStore/stock_form_remove";
             }
             this.productByStoreService.removeStock(idStore, id, requestModifyStock.getStockModified());
+            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "eliminated");
             return "redirect:/productByStore/{idStore}";
         }
         catch(Exception e){

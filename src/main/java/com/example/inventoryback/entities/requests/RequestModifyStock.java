@@ -1,5 +1,6 @@
 package com.example.inventoryback.entities.requests;
 
+import com.example.inventoryback.models.Auditory;
 import com.example.inventoryback.models.ProductsByStore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,4 +16,6 @@ public class RequestModifyStock {
     private Long stockModified;
 
     private ProductsByStore productsByStore;
+
+    private String reason;
 }
