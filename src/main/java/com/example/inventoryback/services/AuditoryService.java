@@ -2,10 +2,13 @@ package com.example.inventoryback.services;
 
 import com.example.inventoryback.exceptions.ReasonCannotBeNullException;
 import com.example.inventoryback.models.Auditory;
+import com.example.inventoryback.models.Product;
 import com.example.inventoryback.repositories.AuditoryRepository;
 import com.example.inventoryback.repositories.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AuditoryService {
@@ -34,5 +37,10 @@ public class AuditoryService {
             this.auditoryRepository.save(auditory);
         }
     }
+    public List<Auditory> findAll() {
+        return this.auditoryRepository.findAll();
+    }
+
+
 
 }

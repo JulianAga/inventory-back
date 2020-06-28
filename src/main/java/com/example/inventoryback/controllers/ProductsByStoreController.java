@@ -53,6 +53,12 @@ public class ProductsByStoreController {
         return "productsByStore/all";
     }
 
+    @RequestMapping(value = "/auditory", method = RequestMethod.GET)
+    public String listar(Model model) {
+        model.addAttribute("auditories", auditoryService.findAll());
+        model.addAttribute("title", "Auditorías de stock");
+        return "auditory/all";
+    }
 
     @RequestMapping(value = "/all/{idStore}")
     public String crear(Map<String, Object> model, @PathVariable Long idStore) {
@@ -108,7 +114,7 @@ public class ProductsByStoreController {
 
                 return "productsByStore/stock_form_add";
             }
-            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "added");
+            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "+");
             this.productByStoreService.addStock(idStore, id, requestModifyStock.getStockModified());
             return "redirect:/productByStore/{idStore}";
         }
@@ -137,7 +143,7 @@ public class ProductsByStoreController {
                 return "productsByStore/stock_form_remove";
             }
             this.productByStoreService.removeStock(idStore, id, requestModifyStock.getStockModified());
-            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "eliminated");
+            this.auditoryService.save(id, idStore, requestModifyStock.getStockModified(), requestModifyStock.getReason(), "-");
             return "redirect:/productByStore/{idStore}";
         }
         catch(StockIsNegativeException e){
