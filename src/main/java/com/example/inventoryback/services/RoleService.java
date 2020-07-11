@@ -6,6 +6,8 @@ import com.example.inventoryback.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleService {
 
@@ -14,5 +16,9 @@ public class RoleService {
 
     public Role findById(Long id) throws RoleNotFoundException {
         return roleRepository.findById(id).orElseThrow(RoleNotFoundException::new);
+    }
+
+    public List<Role> findAll(){
+        return this.roleRepository.findAll();
     }
 }

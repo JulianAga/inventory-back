@@ -26,7 +26,7 @@
             <td th:text="${user.name}"></td>
             <td th:text="${user.cellphone}"></td>
             <td th:text="${user.address}"></td>
-            <td th:text="${user.role.getId()}"></td>
+            <td th:text="${user.role}"></td>
             <td><a class="btn btn-primary btn-xs" th:href="@{/users/form/} + ${user.id}"
                    th:text="'Editar'"></a></td>
             <td><a class="btn btn-danger btn-xs" th:href="@{/users/delete/} + ${user.id}"

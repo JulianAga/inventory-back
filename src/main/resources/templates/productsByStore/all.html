@@ -19,10 +19,10 @@
       <label class="col-sm-2 col-form-label">Nombre del producto</label>
       <div class=col-sm-6>
         <select id="id" name="id" class="form-control" onchange="activarBoton()" type="check">
-          <option value="0"> Seleccione una opcion </option>
-          <option th:each="product:${products}" th:value="${product.id}" th:text="${product.name}" th:selected="false"></option>
-        </select>
-      </div>
+      <option value="0"> Seleccione una opcion </option>
+      <option th:each="product:${products}" th:value="${product.id}" th:text="${product.name}" th:selected="false"></option>
+      </select>
+    </div>
     </div>
 
     <input type="submit" value="Añadir al local" name="enviar" id="enviar" class="btn btn-success" disabled>
