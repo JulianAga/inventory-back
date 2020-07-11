@@ -7,7 +7,6 @@ import com.example.inventoryback.exceptions.UserNotExistsException;
 import com.example.inventoryback.models.User;
 import com.example.inventoryback.repositories.UserRepository;
 import com.example.inventoryback.restUtils.HashPassword;
-import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

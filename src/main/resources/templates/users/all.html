@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+<div class="container">
+    <br>
+    <h1 class="text-secondary border border success border-top-0 border-left-0 border-right-0"
+        th:text="Usuarios"></h1>
+    <table class="table table-striped">
+        <thead>
+        <th>Mail</th>
+        <th>Nombre</th>
+        <th>Celular</th>
+        <th>Dirección</th>
+        <th>Rol</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+        </thead>
+        <tbody>
+        <tr th:each="user:${users}">
+
+            <td th:text="${user.mail}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.cellphone}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.role.getId()}"></td>
+            <td><a class="btn btn-primary btn-xs" th:href="@{/users/form/} + ${user.id}"
+                   th:text="'Editar'"></a></td>
+            <td><a class="btn btn-danger btn-xs" th:href="@{/users/delete/} + ${user.id}"
+                   th:text="'Eliminar'" onclick="return confirm('Estás seguro que deseas eliminar?')"></a>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="container">
+        <a class="btn btn-primary" th:href="@{/users/form}">Agregar usuario</a>
+    </div>
+</div>
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>
