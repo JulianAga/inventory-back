@@ -1,14 +1,8 @@
 package com.example.inventoryback.models;
 
 import java.util.Set;
-import javax.management.relation.Role;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,24 +18,27 @@ import lombok.ToString;
 @ToString
 public class User {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  private String mail;
+    private String mail;
 
-  private String password;
+    private String password;
 
-  @Transient
-  private String passwordConfirm;
+    @Transient
+    private String passwordConfirm;
 
-  private String name;
+    private String name;
 
-  private String cellphone;
+    private String cellphone;
 
-  private String address;
+    private String address;
 
-  @ManyToMany
-  private Set<Rol> roles;
+    @ManyToOne
+    @JoinColumn(name = "role")
+    private Role role;
+
+    private boolean active = true;
 
 }
