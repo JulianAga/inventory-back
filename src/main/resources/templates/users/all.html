@@ -41,6 +41,8 @@
     </div>
 </div>
 
+<div class="alert alert-danger" role="alert" th:if="${error}" th:text="${error}">
+</div>
 
 <footer th:replace="layout/layout :: footer"></footer>
 

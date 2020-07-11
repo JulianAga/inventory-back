@@ -2,6 +2,7 @@ package com.example.inventoryback.services;
 
 import com.example.inventoryback.dto.UserRequestDto;
 import com.example.inventoryback.exceptions.ResourceAlreadyExistsException;
+import com.example.inventoryback.exceptions.RoleCannotBeNullException;
 import com.example.inventoryback.exceptions.RoleNotFoundException;
 import com.example.inventoryback.exceptions.UserNotExistsException;
 import com.example.inventoryback.models.User;
@@ -25,9 +26,12 @@ public class UserService {
     @Autowired
     private RoleService roleService;
 
-    public void save(User user) throws NoSuchAlgorithmException {
-        user.setPassword(hashPassword(user.getPassword()));
-        this.userRepository.save(user);
+    public void save(User user) throws NoSuchAlgorithmException, RoleCannotBeNullException {
+            if(user.getRole().getId()== 0){
+                throw new RoleCannotBeNullException();
+            }
+            user.setPassword(hashPassword(user.getPassword()));
+            this.userRepository.save(user);
     }
 
     public List<User> findAll(){

@@ -2,6 +2,7 @@ package com.example.inventoryback.controllers;
 
 import com.example.inventoryback.dto.UserRequestDto;
 import com.example.inventoryback.exceptions.ResourceAlreadyExistsException;
+import com.example.inventoryback.exceptions.RoleCannotBeNullException;
 import com.example.inventoryback.exceptions.RoleNotFoundException;
 import com.example.inventoryback.exceptions.UserNotExistsException;
 import com.example.inventoryback.models.Product;
@@ -70,9 +71,16 @@ public class UserController {
     }
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
-    public String addNewUser(@Valid User user, BindingResult result, Model model) throws NoSuchAlgorithmException {
-        userService.save(user);
-        return "redirect:all";
+    public String addNewUser(@Valid User user, BindingResult result, Model model) throws NoSuchAlgorithmException, RoleCannotBeNullException {
+        try{
+            userService.save(user);
+            return "redirect:all";
+        }
+        catch(RoleCannotBeNullException e){
+            model.addAttribute("error", "El rol no puede estar vacío");
+            return getAllUsers(model);
+        }
+
     }
 
     public User findById(@PathVariable Long id) throws UserNotExistsException {
