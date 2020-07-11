@@ -25,7 +25,8 @@ public class UserService {
     @Autowired
     private RoleService roleService;
 
-    public void save(User user){
+    public void save(User user) throws NoSuchAlgorithmException {
+        user.setPassword(hashPassword(user.getPassword()));
         this.userRepository.save(user);
     }
 
@@ -48,7 +49,7 @@ public class UserService {
             user.setAddress(userDto.getAddress());
             user.setCellphone(userDto.getCellphone());
             user.setName(userDto.getName());
-            user.setPassword(userDto.getPassword());
+            user.setPassword(hashPassword(userDto.getPassword()));
             user.setRole(roleService.findById(userDto.getRole()));
             return this.userRepository.save(user);
         } catch (Exception e) {
@@ -69,7 +70,7 @@ public class UserService {
         user.setAddress(userDto.getAddress());
         user.setCellphone(userDto.getCellphone());
         user.setName(userDto.getName());
-        user.setPassword(userDto.getPassword());
+        user.setPassword(hashPassword(userDto.getPassword()));
         user.setRole(roleService.findById(userDto.getRole()));
 
         return this.userRepository.save(user);

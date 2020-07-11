@@ -70,7 +70,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
-    public String addNewUser(@Valid User user, BindingResult result, Model model) {
+    public String addNewUser(@Valid User user, BindingResult result, Model model) throws NoSuchAlgorithmException {
         userService.save(user);
         return "redirect:all";
     }
