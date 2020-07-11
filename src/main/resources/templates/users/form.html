@@ -53,7 +53,7 @@
 
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Rol</label>
-    <select th:field="*{role}" class="form-control"  type="check">
+    <select th:field="*{role.id}" class="form-control"  type="check">
         <option value="0"> Rol </option>
         <option th:each="role:${roles}" th:value="${role.id}" th:text="${role.name}" th:selected="false"></option>
     </select>
