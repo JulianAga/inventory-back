@@ -37,17 +37,7 @@ public class ProductService {
       result = false;
     }
 
-    if (isProductByName(product.getName())) {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name already exist");
-    }
-
     return result;
-  }
-
-  public boolean isProductByName(String name) {
-    return this.productRepository.findAll()
-        .stream().filter(product -> product.getName().equals(name))
-        .map(store -> Boolean.TRUE).findAny().orElse(Boolean.FALSE);
   }
 
   public Product findProductByName(RequestProduct requestProduct) {
@@ -79,4 +69,5 @@ public class ProductService {
   public void deleteById(Long id) {
     this.productRepository.deleteById(id);
   }
+
 }

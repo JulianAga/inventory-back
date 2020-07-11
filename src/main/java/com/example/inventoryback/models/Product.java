@@ -33,13 +33,14 @@ public class Product {
   private Long id;
 
   @Size(min = 2, max = 100)
-  @JsonProperty(value = "name")
   @NotEmpty
+  @JsonProperty(value = "name")
   @Column(name = "name")
   private String name;
 
   private String photo;
 
+  @NotEmpty
   @Column(name = "code")
   @JsonProperty(value = "code")
   private String code;
@@ -52,9 +53,11 @@ public class Product {
   @JsonProperty(value = "selling_price")
   private Float sellingPrice;
 
+  /*
   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "product")
   @ToString.Exclude
   private List<ProductsByStore> productsByStores;
+*/
 
 }
 

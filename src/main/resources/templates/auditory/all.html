@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+<div class="container">
+    <br>
+    <h1 class="text-secondary border border success border-top-0 border-left-0 border-right-0"
+        th:text="${title}"></h1>
+    <table class="table table-striped">
+        <thead>
+        <th>Nombre del producto</th>
+        <th>Almacén</th>
+        <th>Stock modificado</th>
+        <th>Añadido o eliminado</th>
+        <th>Razón de modificación</th>
+        </thead>
+        <tbody>
+        <tr th:each="auditory:${auditories}">
+
+            <td th:text="${auditory.product.getName()}"></td>
+
+            <td th:text="${auditory.store.getName()}"></td>
+
+            <td th:text="${auditory.stockModified}"></td>
+
+            <td th:text="${auditory.addedOrEliminated}"></td>
+
+            <td th:text="${auditory.reason}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>
